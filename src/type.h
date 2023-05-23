@@ -20,6 +20,7 @@
 
 
 using std::string;
+using std::wstring;
 
 
 // 交易下单
@@ -63,4 +64,3 @@ enum class OrderStatus {
 };
 
 
-#endif

@@ -63,8 +63,16 @@ else()
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 endif()
 
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    add_definitions(-D_DEBUG)
+    set(ThirdPartyPath "${OutPath}/third_party/${platform}_debug")
+else()
+    add_definitions(-DNDEBUG)
+    set(ThirdPartyPath "${OutPath}/third_party/${platform}_release")
+endif()
 
-include_directories("${PROJECT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}" "${OutPath}/include" "${OutPath}/include/boost-1_76")
-link_directories("${OutPath}/lib")
+
+include_directories("${ThirdPartyPath}/include")
+link_directories("${ThirdPartyPath}/lib")
 
 add_subdirectory ("src")
