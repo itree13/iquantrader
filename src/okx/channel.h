@@ -10,10 +10,13 @@ namespace okx {
     public:
         Channel(const wstring& uri);
 
+        void connect();
 
+        virtual void onMessage(const string& data) {}
 
     private:
-        web::websockets::client::websocket_client client_;
+        const wstring uri_;
+        web::websockets::client::websocket_callback_client client_;
     };
 
 
