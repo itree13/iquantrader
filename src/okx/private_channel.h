@@ -6,6 +6,8 @@ namespace okx {
 
 
     class PrivateChannel : public Channel {
+    public:
+        using Channel::Channel;
 
     };
 

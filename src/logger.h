@@ -7,7 +7,7 @@ void init_logger();
 
 #define LOG(lvl) BOOST_LOG_TRIVIAL(lvl)
 
-#define ENDL        std::dec << "   (" << __FILE__ << ':' << __FUNCTION__ << ':' << __LINE__ << ")"
+#define ENDL std::dec << "   (" << __FILE__ << ':' << __FUNCTION__ << ':' << __LINE__ << ")"
 
 namespace std {
 

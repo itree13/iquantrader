@@ -16,6 +16,7 @@ endif (MSVC)
 add_executable(iquantrader
 	${DIR_SRC})
 
-target_link_libraries(iquantrader cpprest_2_10$<$<CONFIG:Debug>:d> libcrypto crypt32)
+target_compile_definitions(iquantrader PUBLIC _NO_ASYNCRTIMP)
+target_link_libraries(iquantrader cpprest_2_10$<$<CONFIG:Debug>:d> libcrypto crypt32 libssl zlibstatic$<$<CONFIG:Debug>:d>)
 	
 install(TARGETS iquantrader RUNTIME DESTINATION iquantrader)

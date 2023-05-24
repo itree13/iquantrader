@@ -1,0 +1,3 @@
+[okx]
+# demo, aws, production
+env = demo
