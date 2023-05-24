@@ -9,15 +9,15 @@ namespace okx {
 
     class Channel {
     public:
-        Channel(const wstring& uri);
+        Channel(const string& uri, const string& proxy);
 
-        void connect();
+        bool connect();
 
         virtual void onMessage(const string& data) {}
 
     private:
-        const wstring uri_;
-        web::websockets::client::websocket_callback_client client_;
+        const string uri_;
+        std::unique_ptr<web::websockets::client::websocket_callback_client> client_;
     };
 
 

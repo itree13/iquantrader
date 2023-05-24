@@ -9,10 +9,12 @@ namespace okx {
 
     class Client {
     public:
-        void init();
+        bool init();
 
 
-
+    private:
+        std::unique_ptr<PublicChannel> pub_ch_;
+        std::unique_ptr<PrivateChannel> priv_ch_;
     };
 
 

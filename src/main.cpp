@@ -1,5 +1,6 @@
 #include "settings.h"
 #include "logger.h"
+#include "okx/client.h"
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -18,6 +19,11 @@ int main() {
         return -1;
     }
 
+    okx::Client client;
+    if (!client.init()) {
+        LOG(fatal) << "init client failed!";
+        return -1;
+    }
 
 
     return 0;
