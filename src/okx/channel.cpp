@@ -4,11 +4,8 @@
 namespace okx {
 
 
-    Channel::Channel(const wstring& uri)
-    : client_(uri) {
-
-
-
+    Channel::Channel(const wstring& uri) {
+        client_.connect(uri);
     }
 
 

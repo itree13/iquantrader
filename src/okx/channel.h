@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../type.h"
-#include <cpprest/http_client.h>
+#include <cpprest/ws_client.h>
 
 namespace okx {
 
@@ -13,7 +13,7 @@ namespace okx {
 
 
     private:
-        web::http::client::http_client client_;
+        web::websockets::client::websocket_client client_;
     };
 
 
